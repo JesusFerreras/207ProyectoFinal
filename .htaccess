@@ -1,0 +1,6 @@
+RewriteEngine on
+
+DirectoryIndex index.php
+
+ErrorDocument 403 /207ProyectoFinal/error/403.html
+ErrorDocument 404 /207ProyectoFinal/error/404.html
