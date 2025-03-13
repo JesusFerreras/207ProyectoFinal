@@ -1,66 +1,80 @@
 Glosario
-	Usuario no registrado
-		Usuario de la aplicación que no ha iniciado sesión
-	Usuario registrado
-		Usuario de la aplicación que ha iniciado sesión, se identifica mediante un código y una contraseña
-	Coleccionable
-		Cada uno de los elementos que se pueden obtener, los atributos comunes entre los distintos tipos son:
-			Icono
-				Ruta de la imagen utilizada para representar el coleccionable
-			Nombre
-				Nombre del coleccionable
-			Precio
-				Cantidad por la que se puede vender
-	Pez
-		Uno de los tipos de coleccionable, sus atributos a mayores son:
-			Ubicación
-				Lugar donde se puede encontrar el pez
-			Horario
-				Horario en el que el pez es obtenible
-			Meses
-				Meses en los que el pez es obtenible
-			Tamaño
-				Tamaño medio del pez
-			Sombra
-				Tamaño y forma de la sombra que proyecta el pez
-	Bicho
-		Uno de los tipos de coleccionable, sus atributos a mayores son:
-			Ubicación
-				Lugar donde se puede encontrar el bicho
-			Horario
-				Horario en el que el bicho es obtenible
-			Meses
-				Meses en los que el bicho es obtenible
-			Tamaño
-				Tamaño medio del bicho
-	Fósil
-		Uno de los tipos de coleccionable, sus atributos a mayores son:
-			Conjunto
-				Conjunto al que pertenece el fósil
-			Parte
-				Parte del conjunto que es el fósil (cráneo, cuerpo, completo...)
-	Obra
-		Uno de los tipos de coleccionable, sus atributos a mayores son:
-			Falsificación
-				Ruta de la imagen de la obra falsa si la hay
-			Diferencia
-				Diferencia entre la obra falsa y la auténtica
+    Usuario
+        Persona que utiliza la aplicación, sus atributos son:
+            idUsuario
+                Identificador o nombre del usuario
+            password
+                Contraseña del usuario
+            fechaGuardada
+                Fecha y hora que ha guardado el usuario para tomar como referencia a la hora de calcular la fecha por defecto de la página
+            ultimaConexion
+                Fecha y hora de la última conexión del usuario
+    Usuario no registrado
+        Usuario de la aplicación que no ha iniciado sesión
+    Usuario registrado
+        Usuario de la aplicación que ha iniciado sesión, se identifica mediante un código y una contraseña
+    Coleccionable
+        Cada uno de los elementos que se pueden obtener, los atributos comunes entre los distintos tipos son:
+            rutaIcono
+                Ruta de la imagen utilizada para representar el coleccionable
+            nombre
+                Nombre del coleccionable
+            precio
+                Cantidad por la que se puede vender
+    Pez
+        Uno de los tipos de coleccionable, sus atributos a mayores son:
+            ubicación
+                Lugar donde se puede encontrar el pez
+            horario
+                Horario en el que el pez es obtenible
+            meses
+                Meses en los que el pez es obtenible
+            tamaño
+                Tamaño medio del pez
+            sombra
+                Tamaño y forma de la sombra que proyecta el pez
+    Bicho
+        Uno de los tipos de coleccionable, sus atributos a mayores son:
+            ubicación
+                Lugar donde se puede encontrar el bicho
+            horario
+                Horario en el que el bicho es obtenible
+            meses
+                Meses en los que el bicho es obtenible
+            tamaño
+                Tamaño medio del bicho
+    Fósil
+        Uno de los tipos de coleccionable, sus atributos a mayores son:
+            conjunto
+                Conjunto al que pertenece el fósil
+            parte
+                Parte del conjunto que es el fósil (cráneo, cuerpo, completo...)
+    Obra
+        Uno de los tipos de coleccionable, sus atributos a mayores son:
+            rutaFalsificación
+                Ruta de la imagen de la obra falsa si la hay
+            diferencia
+                Diferencia entre la obra falsa y la auténtica
 
 Requisitos
-	Todos los usuarios podrán ver las distintas tablas con los tipos de coleccionables
-	Todos los usuarios podrán cambiar la tabla en curso por otra de otro tipo de coleccionable
-	Todos los usuarios podrán ver de forma detallada los datos de un coleccionable al seleccionarlo
-	Todos los usuarios podrán ordenar los registros de la tabla en curso en función de alguno de los campos visibles
-	Todos los usuarios podrán buscar por nombre alguno de los registros de la tabla en curso
-	Todos los usuarios podrán filtrar por fecha qué coleccionables están disponibles, esto solo afecta a bichos y peces
-	Todos los usuarios podrán marcar qué coleccionables ya han obtenido y ordenar o filtrar los registros de la tabla en curso en función de esto
-	
-	Los usuarios no registrados podrán iniciar sesión a partir de un código y una contraseña
-	Para los usuarios no registrados, al salir de la aplicación se guardará como cookie los coleccionables que han marcado y, si lo han escogido, la fecha han buscado
-	
-	Los usuarios registrados podrán dar de baja su cuenta
-	Los usuarios registrados podrán cerrar sesión
-	Los usuarios registrados podrán cambiar su contraseña por otra distinta
-	Los usuarios registrados podrán consultar una tabla por coleccionable que indique las veces en las que un elemento ha sido obtenido por otros usuarios
-	Para los usuarios registrados, al salir de la aplicación o cerrar sesión se guardará en la base de datos los coleccionables que han marcado y, si lo han escogido, la fecha han buscado
-	Para los usuarios registrados, al salir de la aplicación o cerrar sesión se guardará una cookie para que se inicie automáticamente la última sesión abierta
+    Generales
+        Todos los usuarios podrán ver las distintas tablas con los tipos de coleccionables
+        Todos los usuarios podrán cambiar la tabla en curso por otra de otro tipo de coleccionable
+        Todos los usuarios podrán ver de forma detallada los datos de un coleccionable al seleccionarlo
+        Todos los usuarios podrán ordenar los registros de la tabla en curso en función de alguno de los campos visibles
+        Todos los usuarios podrán buscar por nombre alguno de los registros de la tabla en curso
+        Todos los usuarios podrán filtrar por fecha qué coleccionables están disponibles, esto solo afecta a bichos y peces
+        Todos los usuarios podrán marcar qué coleccionables ya han obtenido y ordenar o filtrar los registros de la tabla en curso en función de esto
+        Al entrar en la página la fecha por defecto se calculará a partir de la fecha que haya guardado el usuario, si no lo ha hecho será la fecha actual
+
+    Para usuarios no registrados
+        Los usuarios no registrados podrán iniciar sesión a partir de un código y una contraseña
+        Para los usuarios no registrados, al salir de la aplicación se guardará como cookie los coleccionables que han marcado y, si lo han escogido, la fecha han buscado
+
+    Para usuarios registrados
+        Los usuarios registrados podrán dar de baja su cuenta
+        Los usuarios registrados podrán cerrar sesión
+        Los usuarios registrados podrán cambiar su contraseña por otra distinta
+        Los usuarios registrados podrán consultar una tabla por coleccionable que indique las veces en las que un elemento ha sido obtenido por otros usuarios
+        Para los usuarios registrados, al salir de la aplicación o cerrar sesión se guardará en la base de datos los coleccionables que han marcado y, si lo han escogido, la fecha han buscado
+        Para los usuarios registrados, al salir de la aplicación o cerrar sesión se guardará una cookie para que se inicie automáticamente la última sesión abierta
