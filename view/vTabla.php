@@ -1,7 +1,13 @@
-<?php
-
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
-
+<header>
+    <?php
+        
+    ?>
+</header>
+<nav>
+    <form id="seleccionTabla" action="<?php print($_SERVER['PHP_SELF']); ?>" method="post" novalidate>
+        <input type="submit">
+    </form>
+</nav>
+<main>
+    
+</main>

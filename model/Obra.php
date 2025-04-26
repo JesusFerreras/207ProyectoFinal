@@ -3,8 +3,8 @@
         private $rutaFalsificacion;
         private $diferencia;
         
-        public function __construct($idColeccionable, $nombre, $rutaIcono, $precio, $rutaFalsificacion, $diferencia) {
-            parent::__construct($idColeccionable, $nombre, $rutaIcono, $precio);
+        public function __construct($nombre, $rutaIcono, $precio, $rutaFalsificacion, $diferencia) {
+            parent::__construct($nombre, $rutaIcono, $precio);
             $this->rutaFalsificacion = $rutaFalsificacion;
             $this->diferencia = $diferencia;
         }

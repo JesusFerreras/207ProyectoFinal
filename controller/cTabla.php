@@ -1,7 +1,23 @@
 <?php
-
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
-
+    if (!isset($_SESSION['usuarioDAW207ProyectoFinal']) && isset($_REQUEST['login'])) {
+        $_SESSION['paginaEnCurso'] = 'login';
+        header('Location: index.php');
+        exit();
+    }
+    
+    if (isset($_SESSION['usuarioDAW207ProyectoFinal']) && isset($_REQUEST['miCuenta'])) {
+        $_SESSION['paginaEnCurso'] = 'miCuenta';
+        header('Location: index.php');
+        exit();
+    }
+    
+    if (isset($_SESSION['usuarioDAW207ProyectoFinal']) && isset($_REQUEST['cerrarSesion'])) {
+        header('Location: index.php');
+        exit();
+    }
+    
+    $campos = [];
+    $datosColeccionables = [];
+    
+    require_once $view['layout'];
+?>

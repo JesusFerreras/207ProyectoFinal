@@ -19,32 +19,39 @@
             if($consultaUsuario->rowCount() > 0) {
                 $datosUsuario = $consultaUsuario->fetchObject();
                 
-                $seleccionTareas = <<<FIN
-                    select * from Tarea
+                $seleccionObtencion = <<<FIN
+                    select idColeccionable from Obtencion
                         where idUsuario = '$idUsuario'
                     ;
                 FIN;
                 
                 $tareas = [];
-                $consultaTareas = DBPDO::ejecutarConsulta($seleccionTareas);
-                while ($datosTarea = $consultaTareas->fetchObject()) {
-                    $tareas[$datosTarea->idTarea] = new Tarea(
-                        $datosTarea->descripcion,
-                        new DateTime($datosTarea->fechaCreacion),
-                        is_null($datosTarea->fechaTope)? null : new DateTime($datosTarea->fechaTope),
-                        $datosTarea->complecion == 1
-                    );
-                }
-                
-                uasort($tareas, 'comparadorTareas');
+                $consultaObtencion = DBPDO::ejecutarConsulta($seleccionObtencion);
                 
                 return new Usuario(
                     $datosUsuario->idUsuario,
                     $datosUsuario->password,
-                    $tareas
+                    $consultaObtencion->fetchAll(PDO::FETCH_COLUMN, 0)
                 );
             } else {
                 return false;
             }
         }
+    
+        public function registrarUsuario($idUsuario, $contrasena) {
+
+        }
+        
+        public function cambiarContrasena($idUsuario, $contrasena) {
+            
+        }
+        
+        public function darDeBaja($usuario) {
+            
+        }
+        
+        public function guardarUsuario($usuario) {
+            
+        }
     }
+?>

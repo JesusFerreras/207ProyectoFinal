@@ -1,19 +1,13 @@
 <?php
     abstract class Coleccionable {
-        private $idColeccionable;
         private $nombre;
         private $rutaIcono;
         private $precio;
         
-        public function __construct($idColeccionable, $nombre, $rutaIcono, $precio) {
-            $this->idColeccionable = $idColeccionable;
+        public function __construct($nombre, $rutaIcono, $precio) {
             $this->nombre = $nombre;
             $this->rutaIcono = $rutaIcono;
             $this->precio = $precio;
-        }
-        
-        public function getIdColeccionable() {
-            return $this->idColeccionable;
         }
 
         public function getNombre() {
@@ -26,10 +20,6 @@
 
         public function getPrecio() {
             return $this->precio;
-        }
-
-        public function setIdColeccionable($idColeccionable): void {
-            $this->idColeccionable = $idColeccionable;
         }
 
         public function setNombre($nombre): void {

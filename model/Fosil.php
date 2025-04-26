@@ -3,8 +3,8 @@
         private $conjunto;
         private $parte;
         
-        public function __construct($idColeccionable, $nombre, $rutaIcono, $precio, $conjunto, $parte) {
-            parent::__construct($idColeccionable, $nombre, $rutaIcono, $precio);
+        public function __construct($nombre, $rutaIcono, $precio, $conjunto, $parte) {
+            parent::__construct($nombre, $rutaIcono, $precio);
             $this->conjunto = $conjunto;
             $this->parte = $parte;
         }

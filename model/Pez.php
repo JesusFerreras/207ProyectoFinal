@@ -6,8 +6,8 @@
         private $tamano;
         private $sombra;
         
-        public function __construct($idColeccionable, $nombre, $rutaIcono, $precio, $ubicacion, $horario, $meses, $tamano, $sombra) {
-            parent::__construct($idColeccionable, $nombre, $rutaIcono, $precio);
+        public function __construct($nombre, $rutaIcono, $precio, $ubicacion, $horario, $meses, $tamano, $sombra) {
+            parent::__construct($nombre, $rutaIcono, $precio);
             $this->ubicacion = $ubicacion;
             $this->horario = $horario;
             $this->meses = $meses;
